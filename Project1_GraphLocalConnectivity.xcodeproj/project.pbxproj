@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		FA1E94661896D41200DF841E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA1E94651896D41200DF841E /* main.cpp */; };
 		FA1E94681896D41200DF841E /* Project1_GraphLocalConnectivity.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA1E94671896D41200DF841E /* Project1_GraphLocalConnectivity.1 */; };
+		FA1E947118970B8D00DF841E /* liblpsolve55.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1E946F18970B8D00DF841E /* liblpsolve55.a */; };
+		FA1E947218970B8D00DF841E /* liblpsolve55.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1E947018970B8D00DF841E /* liblpsolve55.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +30,9 @@
 		FA1E94621896D41200DF841E /* Project1_GraphLocalConnectivity */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Project1_GraphLocalConnectivity; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA1E94651896D41200DF841E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		FA1E94671896D41200DF841E /* Project1_GraphLocalConnectivity.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Project1_GraphLocalConnectivity.1; sourceTree = "<group>"; };
+		FA1E946E1897091300DF841E /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		FA1E946F18970B8D00DF841E /* liblpsolve55.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblpsolve55.a; path = ../liblpsolve55.a; sourceTree = "<group>"; };
+		FA1E947018970B8D00DF841E /* liblpsolve55.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = liblpsolve55.dylib; path = ../liblpsolve55.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +40,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1E947118970B8D00DF841E /* liblpsolve55.a in Frameworks */,
+				FA1E947218970B8D00DF841E /* liblpsolve55.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +51,8 @@
 		FA1E94591896D41200DF841E = {
 			isa = PBXGroup;
 			children = (
+				FA1E946F18970B8D00DF841E /* liblpsolve55.a */,
+				FA1E947018970B8D00DF841E /* liblpsolve55.dylib */,
 				FA1E94641896D41200DF841E /* Project1_GraphLocalConnectivity */,
 				FA1E94631896D41200DF841E /* Products */,
 			);
@@ -61,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				FA1E94651896D41200DF841E /* main.cpp */,
+				FA1E946E1897091300DF841E /* Header.h */,
 				FA1E94671896D41200DF841E /* Project1_GraphLocalConnectivity.1 */,
 			);
 			path = Project1_GraphLocalConnectivity;
@@ -92,7 +102,7 @@
 		FA1E945A1896D41200DF841E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "YI LING";
 			};
 			buildConfigurationList = FA1E945D1896D41200DF841E /* Build configuration list for PBXProject "Project1_GraphLocalConnectivity" */;
@@ -128,6 +138,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -165,6 +176,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -195,14 +207,24 @@
 		FA1E946C1896D41200DF841E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/Alex/Documents/MST\\ STUDY/Maggie-project",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) /Users/Alex/Documents/MST\\ STUDY/Maggie-project";
 			};
 			name = Debug;
 		};
 		FA1E946D1896D41200DF841E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/Alex/Documents/MST\\ STUDY/Maggie-project",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) /Users/Alex/Documents/MST\\ STUDY/Maggie-project";
 			};
 			name = Release;
 		};
@@ -225,6 +247,7 @@
 				FA1E946D1896D41200DF841E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
