@@ -1,4 +1,3 @@
-//dfsdfsdfsf
 //
 //  main.cpp
 //  Project1_GraphLocalConnectivity
