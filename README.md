@@ -1,4 +1,4 @@
-Introduction to partitionWithEta
+Introduction to partition
 ===============================
 This repository including two branches: partition and partitionWithEta. 
 
