@@ -1,4 +1,4 @@
-Project1_GraphLocalConnectivity
+Introduction to partitionWithEta
 ===============================
 This repository including two branches: partition and partitionWithEta. 
 
