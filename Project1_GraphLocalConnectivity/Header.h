@@ -66,7 +66,7 @@ vector<double>line_Eta;
 vector<vector<bool>>adj;//bool adj[NUM_NODES][NUM_NODES];
 vector<bool>line;
 int Ev_length=0;
-float lambda=4.2;
+float lambda=0.85;
 vector<int>Partition_result(INI_NUM_NODES);//int Partition_result[NUM_NODES]={0};
 vector<int> x_(INI_NUM_NODES);
 vector<int> x_i(INI_NUM_NODES);
