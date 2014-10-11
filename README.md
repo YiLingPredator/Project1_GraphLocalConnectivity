@@ -2,6 +2,8 @@ Introduction to partition
 ===============================
 This repository including two branches: partition and partitionWithEta. 
 
+Ps: the Read_RelayNode_file() function is wrong. I have to updates it by checking LC_RelayNode.txt.
+
 The partition is based on Globecom 2014. It can do partition and relay node deployment. How it works?
 1. Read the NodePosition.txt
 2. Do the partition.
