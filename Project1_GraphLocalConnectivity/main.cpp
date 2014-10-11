@@ -545,25 +545,25 @@ void getEc(){
     }
 }
 void getAset(){
-    //    for (int i=0; i<NUM_NODES; i++) {
-    //        if (Partition_result[i]==1) {
-    //            W[W_length]=i;
-    //            W_length++;
-    //        }
-    //    }
-    W={0,1,4,6,9,11,12,13,15,18,21,23,25,26,28};
-    W_length=15;
+        for (int i=0; i<NUM_NODES; i++) {
+            if (Partition_result[i]==1) {
+                W[W_length]=i;
+                W_length++;
+            }
+        }
+    //W={0,1,4,6,9,11,12,13,15,18,21,23,25,26,28};
+    //W_length=15;
     
 }
 void getAbarset(){
-    //    for (int i=0; i<NUM_NODES; i++) {
-    //        if (Partition_result[i]!=1) {
-    //            Z[Z_length]=i;
-    //            Z_length++;
-    //        }
-    //    }
-    Z={2,3,5,7,8,10,14,16,17,19,20,22,24,27,29};
-    Z_length=15;
+        for (int i=0; i<NUM_NODES; i++) {
+            if (Partition_result[i]!=1) {
+                Z[Z_length]=i;
+                Z_length++;
+            }
+        }
+    //Z={2,3,5,7,8,10,14,16,17,19,20,22,24,27,29};
+    //Z_length=15;
     
 }
 void getCset(){
@@ -933,9 +933,9 @@ int main(int argc, const char * argv[]){
     
     getLocalGraph();
     Partition();
-    //getEc();
-    //getAset();
-    //getAbarset();
+    getEc();
+    getAset();
+    getAbarset();
     //getCset();
     //RelayNode();
     //outputAbarPosition();
