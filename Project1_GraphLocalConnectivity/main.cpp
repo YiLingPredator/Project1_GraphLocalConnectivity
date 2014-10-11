@@ -58,13 +58,13 @@ void getEv(){
                 Eta[j][i]=1;
             }
             else{
-                Ev_set[Ev_length].pointA_id=i;
-                Ev_set[Ev_length].pointB_id=j;
-                Ev_length++;
-                adj[i][j]=true;
-                adj[j][i]=true;
-                Eta[i][j]=pow((dis/NEIGHBOR_RANGE),-GAMMA);
-                Eta[j][i]=pow((dis/NEIGHBOR_RANGE),-GAMMA);
+//                Ev_set[Ev_length].pointA_id=i;
+//                Ev_set[Ev_length].pointB_id=j;
+//                Ev_length++;
+//                adj[i][j]=true;
+//                adj[j][i]=true;
+//                Eta[i][j]=pow((dis/NEIGHBOR_RANGE),-GAMMA);
+//                Eta[j][i]=pow((dis/NEIGHBOR_RANGE),-GAMMA);
             }
         }
     }
@@ -73,12 +73,14 @@ void getEv(){
     //    for (int i=0; i<Ev_length; i++) {
     //        cout<<Ev_set[i].pointA_id<<"-"<<Ev_set[i].pointB_id<<endl;
     //    }
-    //    ofstream output;
-    //    output.open("edgeFile.txt");
-    //    for (int i=0; i<Ev_length; i++) {
-    //        output<<Ev_set[i].pointA_id<<"-"<<Ev_set[i].pointB_id<<endl;
-    //    }
-    //    output.close();
+    
+    // 互为邻居的两个点写入edgeFile.txt
+        ofstream output;
+        output.open("edgeFile.txt");
+        for (int i=0; i<Ev_length; i++) {
+            output<<Ev_set[i].pointA_id<<"-"<<Ev_set[i].pointB_id<<endl;
+        }
+        output.close();
     
 }
 void transmission(){
@@ -223,7 +225,7 @@ void Generate_LC_File_Partition(){
         //cout<<"+"<<"x_"<<l;
         //}
     }
-    sout<<">="<<V_length/3<<";"<<endl;
+    sout<<">0;"<<endl;
     //cout<<">=0;"<<endl;
     //subject to:sumx_i<=|V|/2
     for (int l=0; l<NUM_NODES; l++) {
@@ -289,7 +291,7 @@ void Generate_LC_File_Partition(){
     //cout<<";"<<std::endl;
     sout.close();
 }
-void Generate_LC_File_Partition_Eta(){
+/*void Generate_LC_File_Partition_Eta(){
     ofstream sout;
     char outputfileName[20];
     sprintf(outputfileName, "LC.lp");
@@ -433,7 +435,7 @@ void Generate_LC_File_Partition_Eta(){
     sout<<";"<<std::endl;
     //cout<<";"<<std::endl;
     sout.close();
-}
+}*/
 void Read_Partition_File(char* filename){
     char line[100];
     int i = 0;
@@ -512,8 +514,8 @@ int Partition(){
     lprec *lp;
     ofstream sOut;
     ifstream sin;
-    Generate_LC_File_Partition_Eta();
-    //Generate_LC_File_Partition();
+    //Generate_LC_File_Partition_Eta();
+    Generate_LC_File_Partition();
     lp = read_LP(file_name, NORMAL, test_model);
     if(lp == NULL){
         cout<< "Unable to read model\n";
